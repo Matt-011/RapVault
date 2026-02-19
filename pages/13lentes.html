@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>13 Lentes de um Final Feliz- RapVault</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilo3.css">
+</head>
+
+<body>
+
+    <header class="bg-secondary">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="../images/logo.png" alt="logo" width="140" height="70" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="menu">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/Álbuns.html">Álbuns</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/Artista.html">Artistas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/ajuda.html">Ajuda</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" action="pages/resultado.html" method="GET">
+                        <input class="form-control me-2" type="text" name="q" placeholder="Pesquisar artista..."
+                            required>
+                        <button class="btn btn-outline-light bg-dark" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="layout">
+
+        <!-- ESQUERDA -->
+        <div class="left">
+            <model-viewer src="../3dmodels/13 Lentes de um Final Feliz.glb" camera-controls auto-rotate shadow-intensity="1" exposure="1"
+                tone-mapping="neutral" environment-image="neutral" alt="Modelo 3D 13LDUFF">
+            </model-viewer>
+        </div>
+
+        <!-- DIREITA -->
+        <div class="right">
+            <div class="content">
+
+                <!-- LOGO + INFO -->
+                <div class="album-header">
+                    <img src="../images/13lentes.png" alt="Bully Logo" class="image">
+                    <h1>YUN LI</h1>
+                    <p>Álbum • 43min</p>
+                    <p>Lançamento: 20/12/2024</p>
+                </div>
+
+                <!-- TRACKLIST -->
+                <div class="tracklist">
+                    <ul>
+                        <li><a href="#">1. Au Revoir <span class="tempo">3:01</span></a></li>
+                        <li><a href="#">2. Carruagem <span class="tempo">1:45</span></a></li>
+                        <li><a href="#">3. Agradeço <span class="tempo">2:22</span></a></li>
+                        <li><a href="#">4. Corrida <span class="tempo">2:28</span></a></li>
+                        <li><a href="#">5. Joias da Família <span class="tempo">2:16</span></a></li>
+                        <li><a href="#">6. Nunca Paro <span class="tempo">6:05</span></a></li>
+                        <li><a href="#">7. Memórias <span class="tempo">2:27</span></a></li>
+                        <li><a href="#">8. Lost in Translation <span class="tempo">3:03</span></a></li>
+                        <li><a href="#">9. Primavera <span class="tempo">1:51</span></a></li>
+                        <li><a href="#">10. Let Me See The Sun<span class="tempo">2:15</span></a></li>
+                        <li><a href="#">11. Adeus <span class="tempo">2:02</span></a></li>
+                        <li><a href="#">12. Deixa Doer <span class="tempo">3:24</span></a></li>
+                        <li><a href="#">13. Não Me Faça Falar <span class="tempo">3:24</span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bully - RapVault</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilo2.css">
+</head>
+
+<body>
+
+    <header class="bg-secondary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="../images/logo.png" alt="logo" width="140" height="70" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="menu">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/Álbuns.html">Álbuns</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/Artista.html">Artistas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/ajuda.html">Ajuda</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" action="pages/resultado.html" method="GET">
+                        <input class="form-control me-2" type="text" name="q" placeholder="Pesquisar artista..."
+                            required>
+                        <button class="btn btn-outline-light" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="layout">
+
+        <!-- ESQUERDA -->
+        <div class="left">
+            <model-viewer src="../3dmodels/Bully.glb" camera-controls auto-rotate shadow-intensity="1" exposure="1"
+                tone-mapping="neutral" environment-image="neutral" alt="Modelo 3D Bully">
+            </model-viewer>
+        </div>
+
+        <!-- DIREITA -->
+        <div class="right">
+            <div class="content">
+
+                <!-- LOGO + INFO -->
+                <div class="album-header">
+                    <img src="../images/Bully.png" alt="Bully Logo" class="image">
+                    <h1>YE</h1>
+                    <p>Álbum • ???</p>
+                    <p>Lançamento: 20/03/2026</p>
+                </div>
+
+                <!-- TRACKLIST -->
+                <div class="tracklist">
+                    <ul>
+                        <li><a href="#">1. PREACHER MAN <span class="tempo">3:01</span></a></li>
+                        <li><a href="#">2. BEAUTY AND THE BEAST <span class="tempo">1:45</span></a></li>
+                        <li><a href="#">3. LAST BREATH <span class="tempo">2:22</span></a></li>
+                        <li><a href="#">4. I CAN'T WAIT <span class="tempo">2:28</span></a></li>
+                        <li><a href="#">5. BULLY <span class="tempo">2:16</span></a></li>
+                        <li><a href="#">6. ALL THE LOVE <span class="tempo">6:05</span></a></li>
+                        <li><a href="#">7. WHITE LINES <span class="tempo">2:27</span></a></li>
+                        <li><a href="#">8. THIS ONE HERE <span class="tempo">3:03</span></a></li>
+                        <li><a href="#">9. HIGHS AND LOWS <span class="tempo"></span></a></li>
+                        <li><a href="#">10. MISSION CONTROL <span class="tempo">1:51</span></a></li>
+                        <li><a href="#">11. CIRCLES <span class="tempo">2:15</span></a></li>
+                        <li><a href="#">12. DAMN <span class="tempo">2:02</span></a></li>
+                        <li><a href="#">13. LOSING YOUR MIND <span class="tempo">3:24</span></a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
