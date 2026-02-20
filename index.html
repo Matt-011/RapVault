@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
     <link rel="shortcut icon" type="imagex/png" href="">
     <link rel="stylesheet" href="css/estilo.css">
@@ -29,9 +30,116 @@
             <div class="menu-right">
                 <a href="">ALBUNS</a>
                 <a href="#">AJUDA</a>
-            </div> 
+            </div>
         </nav>
     </header>
+
+    <section class="carrossel-3d">
+
+        <button class="seta esquerda" onclick="mover(-1)">❮</button>
+
+        <div class="viewport">
+            <div class="track" id="track">
+
+                <!-- CARD -->
+                <a href="pages/13lentes.html" class="card-3d">
+                    <model-viewer src="3dmodels/13 Lentes de um Final Feliz.glb" auto-rotate interaction-prompt="none"
+                        disable-zoom disable-pan disable-tap shadow-intensity="1">
+                    </model-viewer>
+
+                    <div class="info">
+                        <p class="album">13 Lentes de um Final Feliz</p>
+                        <p class="artista">YUN LI</p>
+                    </div>
+                </a>
+
+                <!-- CARD -->
+                <a href="pages/Bully.html" class="card-3d">
+                    <model-viewer src="3dmodels/Bully.glb" auto-rotate interaction-prompt="none" disable-zoom
+                        disable-pan disable-tap shadow-intensity="1">
+                    </model-viewer>
+
+                    <div class="info">
+                        <p class="album">Bully</p>
+                        <p class="artista">YE</p>
+                    </div>
+                </a>
+
+                <!-- CARD -->
+                <a href="#" class="card-3d">
+                    <model-viewer src="3dmodels/Yandhi.glb" auto-rotate interaction-prompt="none" disable-zoom
+                        disable-pan disable-tap shadow-intensity="1">
+                    </model-viewer>
+
+                    <div class="info">
+                        <p class="album">Yandhi</p>
+                        <p class="artista">Kanye West</p>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <button class="seta direita" onclick="mover(1)">❯</button>
+
+    </section>
+
+    <script>
+        let indexAtual = 0;
+
+        const track = document.getElementById("track");
+        const viewport = document.querySelector(".viewport");
+
+        function atualizarClasses() {
+            const cards = document.querySelectorAll(".card-3d");
+
+            cards.forEach(card => card.classList.remove("ativo"));
+            cards[indexAtual].classList.add("ativo");
+        }
+
+        function centralizar() {
+            const cards = document.querySelectorAll(".card-3d");
+            const cardWidth = cards[0].offsetWidth;
+            const gap = 40;
+
+            const centroViewport = viewport.offsetWidth / 2;
+            const centroCard = cardWidth / 2;
+
+            const posicao = (cardWidth + gap) * indexAtual;
+            const offset = posicao - centroViewport + centroCard;
+
+            track.style.transform = `translateX(-${offset}px)`;
+        }
+
+        function mover(dir) {
+            const cards = document.querySelectorAll(".card-3d");
+
+            if (dir === 1) {
+                // vai pra direita → move primeiro pro final
+                track.appendChild(cards[0]);
+            } else {
+                // vai pra esquerda → move último pro começo
+                track.insertBefore(cards[cards.length - 1], cards[0]);
+            }
+
+            // mantém sempre o do meio ativo
+            indexAtual = Math.floor(document.querySelectorAll(".card-3d").length / 2);
+
+            atualizarClasses();
+            centralizar();
+        }
+
+        // 🚀 INÍCIO PERFEITO CENTRALIZADO
+        window.addEventListener("load", () => {
+            const cards = document.querySelectorAll(".card-3d");
+
+            // define o do meio como ativo
+            indexAtual = Math.floor(cards.length / 2);
+
+            atualizarClasses();
+            centralizar();
+        });
+    </script>
 </body>
 
 </html>
