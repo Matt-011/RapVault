@@ -7,7 +7,7 @@
     <title>Home</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-    <link rel="shortcut icon" type="imagex/png" href="">
+    <link rel="shortcut icon" type="imagex/png" href="images/logo.png">
     <link rel="stylesheet" href="css/estilo.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
 
@@ -35,6 +35,8 @@
     </header>
 
     <section class="carrossel-3d">
+
+        <h1>As album ja prontos</h1>
 
         <button class="seta esquerda" onclick="mover(-1)">❮</button>
 
@@ -65,6 +67,32 @@
                     </div>
                 </a>
 
+                <a href="pages/SHMG.html" class="card-3d">
+                    <model-viewer src="3dmodels/So Help Me God.glb" auto-rotate interaction-prompt="none" disable-zoom
+                        disable-pan disable-tap shadow-intensity="1">
+                    </model-viewer>
+
+                    <div class="info">
+                        <p class="album">So Help Me God</p>
+                        <p class="artista">Kanye West</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <button class="seta direita" onclick="mover(1)">❯</button>
+
+    </section>
+
+    <section class="carrossel-3d">
+
+        <h1>As album nao prontos</h1>
+
+        <button class="seta esquerda" onclick="mover(-1)">❮</button>
+
+        <div class="viewport">
+            <div class="track" id="track">
+
                 <!-- CARD -->
                 <a href="#" class="card-3d">
                     <model-viewer src="3dmodels/Yandhi.glb" auto-rotate interaction-prompt="none" disable-zoom
@@ -77,6 +105,39 @@
                     </div>
                 </a>
 
+
+                <a href="#" class="card-3d">
+                    <model-viewer src="3dmodels/Swish.glb" auto-rotate interaction-prompt="none" disable-zoom
+                        disable-pan disable-tap shadow-intensity="1">
+                    </model-viewer>
+
+                    <div class="info">
+                        <p class="album">Swish</p>
+                        <p class="artista">Kanye West</p>
+                    </div>
+                </a>
+
+                <a href="#" class="card-3d">
+                    <model-viewer src="3dmodels/Yezuus II.glb" auto-rotate interaction-prompt="none" disable-zoom
+                        disable-pan disable-tap shadow-intensity="1">
+                    </model-viewer>
+
+                    <div class="info">
+                        <p class="album">Yezuus II</p>
+                        <p class="artista">Kanye West</p>
+                    </div>
+                </a>
+
+                <a href="#" class="card-3d">
+                    <model-viewer src="3dmodels/Waves.glb" auto-rotate interaction-prompt="none" disable-zoom
+                        disable-pan disable-tap shadow-intensity="1">
+                    </model-viewer>
+
+                    <div class="info">
+                        <p class="album">Waves</p>
+                        <p class="artista">Kanye West</p>
+                    </div>
+                </a>
             </div>
         </div>
 
@@ -129,7 +190,6 @@
             centralizar();
         }
 
-        // 🚀 INÍCIO PERFEITO CENTRALIZADO
         window.addEventListener("load", () => {
             const cards = document.querySelectorAll(".card-3d");
 

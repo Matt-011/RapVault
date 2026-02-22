@@ -22,7 +22,7 @@ body {
 .left {
   position: fixed;
   left: 0;
-  top: 0;
+  top: 100px;
   width: 65vw;
   height: 110vh;
   display: flex;
@@ -33,6 +33,7 @@ body {
 model-viewer {
   width: 80%;
   height: 70%;
+  top: -100px;
 }
 
 header {

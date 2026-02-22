@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Bully - RapVault</title>
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/estilo2.css">
@@ -92,6 +93,16 @@
 
     </div>
 
+    <script src="../plugins/bootstrap/js/bootstrap.js">
+        document.getElementById('formPesquisa').addEventListener('submit', function (e) {
+            e.preventDefault(); // Impede o envio tradicional do formulário
+            const termo = document.getElementById('campoPesquisa').value.trim();
+            if (termo) {
+                // Redireciona com o termo como parâmetro na URL
+                window.location.href = `resultado.html?busca=${encodeURIComponent(termo)}`;
+            }
+        });
+    </script>
 </body>
 
 </html>
