@@ -104,7 +104,7 @@
                         <li><a href="#">Guard Down (Música era SHMG, dada a Ty Dolla $ign)</a></li>
                         <li><a href="#">Jukebox Joints (Música era SHMG, dada a A$AP Rocky)</a></li>
                         <li><a href="#">No Rules "Black Skinhead Remix" (Música era YEEZUS II)</a></li>
-                        <li><a href="#">Reaper "After You" (Música era YEEZUS II, foi dada a Rihanna, dpeois a Sia)</a>
+                        <li><a href="#">Reaper "After You" (Música era YEEZUS II, foi dada a Rihanna, depois a Sia)</a>
                         </li>
                         <li><a href="#">Come and Go "That's On You" (Música era SHMG, dada a Rambo Savage)</a></li>
                     </ul>
@@ -122,31 +122,82 @@
                     <h2>Tracklists antigas</h2>
                     <!-- vazio por enquanto -->
                 </div>
+                <!-- ÁLBUM REFEITO (FINAL DA PÁGINA) -->
+                <div class="refeito-wrapper">
+                    <p class="refeito-label">Álbum foi retrabalhado de:</p>
 
+                    <a href="YeezusII.html" class="album-refeito">
+                        <model-viewer src="../3dmodels/Yezuus II.glb" auto-rotate camera-controls shadow-intensity="1">
+                        </model-viewer>
+                    </a>
+                </div>
+                <div class="refeito-wrapper">
+                    <p class="refeito-label">Álbum retrabalhado em</p>
+
+                    <a href="#" class="album-refeito">
+                        <model-viewer src="../3dmodels/Swish.glb" auto-rotate camera-controls shadow-intensity="1">
+                        </model-viewer>
+                    </a>
+                </div>
             </div>
         </div>
 
     </div>
 
-
-    <!-- ÁLBUM REFEITO (FINAL DA PÁGINA) -->
-    <div class="refeito-wrapper">
-        <p class="refeito-label">Álbum foi retrabalhado de:</p>
-
-        <a href="#" class="album-refeito">
-            <model-viewer src="../3dmodels/Yezuus II.glb" auto-rotate camera-controls shadow-intensity="1">
-            </model-viewer>
-        </a>
-    </div>
-    <div class="refeito-wrapper">
-        <p class="refeito-label">Álbum retrabalhado em</p>
-
-        <a href="#" class="album-refeito">
-            <model-viewer src="../3dmodels/Swish.glb" auto-rotate camera-controls shadow-intensity="1">
-            </model-viewer>
-        </a>
+    <!-- MODAL DA MÚSICA -->
+    <div id="modalMusica" class="modal-musica">
+        <div class="modal-conteudo">
+            <span class="fechar-modal">&times;</span>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalTexto"></p>
+        </div>
     </div>
 
+    <script src="../plugins/bootstrap/js/bootstrap.js"></script>
+
+    <script>
+        /* ===== BANCO DE DADOS DAS MÚSICAS ===== */
+        const musicas = {
+            "Fall Out Of Heaven": "Produzida durante a fase TGFD",
+            "God Level": "Criada na era YEEZUS II. Utilizada em campanha da Adidas.",
+            "High Life": "Faixa criada durante o desenvolvimento de SHMG.",
+            "I Feel Like That": "Gravada durante a fase YEEZUS II.",
+            "All Day": "Produzida em 2014 e lançada oficialmente como single.",
+        };
+
+        /* ===== SISTEMA AUTOMÁTICO ===== */
+        const modal = document.getElementById("modalMusica");
+        const titulo = document.getElementById("modalTitulo");
+        const texto = document.getElementById("modalTexto");
+        const fechar = document.querySelector(".fechar-modal");
+
+        /* pega TODOS os links da tracklist */
+        document.querySelectorAll(".tracklist a").forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                const nomeMusica = this.innerText.trim();
+
+                titulo.innerText = nomeMusica;
+                texto.innerText = musicas[nomeMusica] || "Informações dessa música ainda não foram adicionadas.";
+
+                modal.classList.add("ativo");
+            });
+        });
+
+        /* fechar botão */
+        fechar.addEventListener("click", () => {
+            modal.classList.remove("ativo");
+        });
+
+        /* fechar clicando fora */
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("ativo");
+            }
+        });
+    </script>
+    
     <script src="../plugins/bootstrap/js/bootstrap.js">
         document.getElementById('formPesquisa').addEventListener('submit', function (e) {
             e.preventDefault(); // Impede o envio tradicional do formulário

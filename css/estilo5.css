@@ -5,7 +5,7 @@
 
 body {
     margin: 0;
-    background-image: url('../images/latest.png');
+    background-image: url('../images/');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -223,51 +223,4 @@ header {
 
 .image:hover {
     transform: scale(1.5);
-}
-
-/* ===== MODAL MUSICA ===== */
-
-.modal-musica {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.3s ease;
-    z-index: 9999;
-}
-
-.modal-musica.ativo {
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal-conteudo {
-    background: #000;
-    padding: 30px;
-    width: 400px;
-    border-radius: 12px;
-    text-align: center;
-    transform: translateY(40px);
-    transition: 0.3s ease;
-}
-
-.modal-musica.ativo .modal-conteudo {
-    transform: translateY(0);
-}
-
-.fechar-modal {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 25px;
-    cursor: pointer;
-}
-
-.tracklist li:hover {
-    background: #111;
-    transition: 0.3s;
 }

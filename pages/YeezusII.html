@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>13 Lentes de um Final Feliz- RapVault</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="shortcut icon" type="imagex/png" href="../images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/estilo5.css">
+</head>
+
+<body>
+
+    <header class="bg-secondary">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="../images/logo.png" alt="logo" width="140" height="70" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="menu">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/Álbuns.html">Álbuns</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/Artista.html">Artistas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/ajuda.html">Ajuda</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" action="pages/resultado.html" method="GET">
+                        <input class="form-control me-2" type="text" name="q" placeholder="Pesquisar artista..."
+                            required>
+                        <button class="btn btn-outline-light bg-dark" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="layout">
+
+        <!-- ESQUERDA -->
+        <div class="left">
+            <model-viewer src="../3dmodels/Yezuus II.glb" camera-controls auto-rotate shadow-intensity="1" exposure="1"
+                tone-mapping="neutral" environment-image="neutral" alt="Modelo 3D ">
+            </model-viewer>
+        </div>
+
+        <!-- DIREITA -->
+        <div class="right">
+            <div class="content">
+
+                <!-- LOGO + INFO -->
+                <div class="album-header">
+                    <img src="../images/" alt="Yezuus II Logo" class="image">
+                    <h1>Kanye West</h1>
+                    <p>Álbum • (Descartado)</p>
+                    <p>Lançamento: 2013 - 2014 (Pós-Yeezus)</p>
+                    <p>(Retrabalhado em So Help Me God)</p>
+                </div>
+
+                <!-- TRACKLIST -->
+                <div class="tracklist">
+                    <ul>
+                        <li>Todas as músicas relacionadas a esse projeto:</li>
+                        <li><a href="#">1. Au Revoir <span class="tempo">3:01</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="historia">
+                    <h2>História</h2>
+                    <p>
+                        Texto de exemplo. Aqui você poderá adicionar a história do álbum depois.
+                        Este é apenas um texto placeholder.
+                    </p>
+                </div>
+
+                <div class="tracklists-antigas">
+                    <h2>Tracklists antigas</h2>
+                    <!-- vazio por enquanto -->
+                </div>
+                <!-- ÁLBUM REFEITO (FINAL DA PÁGINA) -->
+                <div class="refeito-wrapper">
+                    <p class="refeito-label">Álbum retrabalhado em:</p>
+
+                    <a href="SHMG.html" class="album-refeito">
+                        <model-viewer src="../3dmodels/So Help Me God.glb" auto-rotate camera-controls shadow-intensity="1">
+                        </model-viewer>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../plugins/bootstrap/js/bootstrap.js">
+        document.getElementById('formPesquisa').addEventListener('submit', function (e) {
+            e.preventDefault(); // Impede o envio tradicional do formulário
+            const termo = document.getElementById('campoPesquisa').value.trim();
+            if (termo) {
+                // Redireciona com o termo como parâmetro na URL
+                window.location.href = `resultado.html?busca=${encodeURIComponent(termo)}`;
+            }
+        });
+    </script>
+</body>
+
+</html>
