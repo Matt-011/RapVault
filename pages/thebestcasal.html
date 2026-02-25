@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Album Of The Best Casal- RapVault</title>
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="shortcut icon" type="imagex/png" href="../images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/love.css">
+</head>
+
+<body>
+
+    <header class="bg-secondary">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container-fluid">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img src="../images/logo.png" alt="logo" width="140" height="70" class="me-2">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
+                    aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="menu">
+                    <ul class="navbar-nav mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/Álbuns.html">Álbuns</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/Artista.html">Artistas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/ajuda.html">Ajuda</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" action="pages/resultado.html" method="GET">
+                        <input class="form-control me-2" type="text" name="q" placeholder="Pesquisar artista..."
+                            required>
+                        <button class="btn btn-outline-light bg-dark" type="submit">Buscar</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="layout">
+        <div class="left">
+            <model-viewer src="../3dmodels/LOVE.glb" camera-controls auto-rotate shadow-intensity="1"
+                exposure="1" tone-mapping="neutral" environment-image="neutral" alt="Modelo 3D SHMG">
+            </model-viewer>
+        </div>
+        <div class="right">
+            <div class="content">
+
+                <div class="album-header">
+                    <img src="../images/2c44fc3d-ec7c-4d50-8a57-cd5f1203fa49.webp" alt="SHMG Logo" class="image">
+                    <h1>Mateus & Carol</h1>
+                    <p>Álbum • Lançado desde 03/05, e atualizado até ∞</p>
+                </div>
+
+                <div class="tracklist">
+                    <ul>
+                        <li>Algumas músicas (histórias) desse amor até agora!!:</li>
+                        <li><a href="#">03/05</a></li>
+                        <li><a href="#">12/05</a></li>
+                        <li><a href="#">12/06</a></li>
+                        <li><a href="#">19/06</a></li>
+                        <li><a href="#">21/06</a></li>
+                        <li><a href="#">28/06</a></li>
+                        <li><a href="#">05/07</a></li>
+                        <li><a href="#">11/07</a></li>
+                        <li><a href="#">14/07</a></li>
+                        <li><a href="#">23/07</a></li>
+                        <li><a href="#">09/08</a></li>
+                        <li><a href="#">18/08</a></li>
+                        <li><a href="#">26/08</a></li>
+                        <li><a href="#">07/09</a></li>
+                        <li><a href="#">14/09</a></li>
+                        <li><a href="#">31/10</a></li>
+                        <li><a href="#">06/11</a></li>
+                        <li><a href="#">22/11</a></li>
+                        <li><a href="#">02/12</a></li>
+                        <li><a href="#">07/12</a></li>
+                        <li><a href="#">17/12</a></li>
+                        <li><a href="#">20/12</a></li>
+                        <li><a href="#">24/12</a></li>
+                        <li><a href="#">25/12</a></li>
+                        <li><a href="#">31/12</a></li>
+                    </ul>
+                </div>
+
+                <div class="historia">
+                    <h2>História</h2>
+                    <p>
+                        Um Álbum que mostra uma história de amor linda entre Mateus de Souza Rocha e Caroline Rocha Rodrigues, onde cada um faz de tudo para o outro e o amor deles É MUUUUUITOO GRANDEE, o amor deles vai até dpois do universo. Uma história onde cada dia que passa eles se amam e se apaixonam cada vez mais!!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL DA MÚSICA -->
+    <div id="modalMusica" class="modal-musica">
+        <div class="modal-conteudo">
+            <span class="fechar-modal">&times;</span>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalTexto"></p>
+        </div>
+    </div>
+
+    <script src="../plugins/bootstrap/js/bootstrap.js"></script>
+
+    <script>
+        /* ===== BANCO DE DADOS DAS MÚSICAS ===== */
+        const musicas = {
+            "03/05": "O NOSSO DIA!! O dia onde tudo começou, onde cada um entrou na vida um do outro. E desde que entraram na vida um do outro, a vida de cada um melhora sempre mais",
+            "12/05": "Dia que tiramos nossa foto dos nossos olhinhos junto, uma das melhores ATÉ HOJEE!!",
+            "12/06": "Nosso primeiro dia dos namorados juntinhos babyy!!",
+            "19/06": "O dia que nos fizemos os tapetinhos de Corpus Christi!!",
+            "21/06": "Primeira vez que o meu amor veio na minha casinhaa!!",
+            "28/06": "Nossa primeira festa junina e dançamos muuuuuutchoooo hihihi!!",
+            "05/07": "Primeira vez que eu fui na casinhaaa do meu amorr e tiramos a nossa MELHOR fotinha de todas!!",
+            "11/07": "Dia que o meu amor me deixou muuuitas imagens fofinhas no meu celular antes da gente entrar de férias!!",
+            "14/07": "Nesse dia meu amor me fez o meu papel de parede que eu uso até hojeee!!",
+            "23/07": "O dia que meu amor fez um papel de parede do Theodore para mimm e um QRCODE muuutchooo lindoooo!!",
+            "09/08": "O dia que fomos tomar um sorvetinho hihihi!!",
+            "18/08": "O dia que teve o Jifs e fomos combinandinho de santistass!!!",
+            "26/08": "Flores no meu cabelinhoo!!!",
+            "07/09": "Desfile do meu paiii!!!",
+            "14/09": "O dia que fomos assistir Demon Slayer, mas não conseguimos assistir kkkkkkkkkkk mas o passeio foi muitoo legal porque demos um passei no shopping e comemos pastel, e principalmente eu estava juntinho do meu amorr ",
+            "31/10": "Dia de Halloween, e com fantasias combinandoo",
+            "06/11": "Viagem para Prudente withh my loveee",
+            "22/11": "Dia da fotinha com os meus pais no TG!!",
+            "02/12": "Aniversário da minha princesaa lindaaa maravilhosaa e perfeitaa!!",
+            "07/12": "Viagemm para aproveitar o aniversário na minha gatona na piscina",
+            "17/12": "Passei no shopping com o amor da minha vidaa!!",
+            "20/12": "Na casinha do meu amor entregando seu presentinhoo de natall!!",
+            "24/12": "Recebe uma surpresa muito linda do meu amorr, MEU PRESENTINHOOO DE NATLL!!",
+            "25/12": "Primeiro natal juntinho do meu amorrr!!!",
+            "31/12": "Primeiroo ano novo juntinho do meu amorr!!",
+        };
+
+        /* ===== SISTEMA AUTOMÁTICO ===== */
+        const modal = document.getElementById("modalMusica");
+        const titulo = document.getElementById("modalTitulo");
+        const texto = document.getElementById("modalTexto");
+        const fechar = document.querySelector(".fechar-modal");
+
+        /* pega TODOS os links da tracklist */
+        document.querySelectorAll(".tracklist a").forEach(link => {
+            link.addEventListener("click", function (e) {
+                e.preventDefault();
+
+                const nomeMusica = this.innerText.trim();
+
+                titulo.innerText = nomeMusica;
+                texto.innerText = musicas[nomeMusica] || "Informações dessa música ainda não foram adicionadas.";
+
+                modal.classList.add("ativo");
+            });
+        });
+
+        /* fechar botão */
+        fechar.addEventListener("click", () => {
+            modal.classList.remove("ativo");
+        });
+
+        /* fechar clicando fora */
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("ativo");
+            }
+        });
+    </script>
+    
+    <script src="../plugins/bootstrap/js/bootstrap.js">
+        document.getElementById('formPesquisa').addEventListener('submit', function (e) {
+            e.preventDefault(); // Impede o envio tradicional do formulário
+            const termo = document.getElementById('campoPesquisa').value.trim();
+            if (termo) {
+                // Redireciona com o termo como parâmetro na URL
+                window.location.href = `resultado.html?busca=${encodeURIComponent(termo)}`;
+            }
+        });
+    </script>
+</body>
+
+</html>
