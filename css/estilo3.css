@@ -157,3 +157,115 @@ header {
 .image:hover {
     transform: scale(1.5);
 }
+
+.modal-musica {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 9999;
+}
+
+.modal-musica.ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-conteudo {
+    background: #000;
+    padding: 30px;
+    width: 400px;
+    border-radius: 12px;
+    text-align: center;
+    transform: translateY(40px);
+    transition: 0.3s ease;
+}
+
+.modal-musica.ativo .modal-conteudo {
+    transform: translateY(0);
+}
+
+.fechar-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.tracklist li:hover {
+    background: #00abc9;
+    transition: 0.3s;
+}
+
+.refeito-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+}
+
+.refeito-label {
+    position: absolute;
+    bottom: 140px;
+    right: 20px;
+    font-family: 'Bungee', cursive;
+    font-size: 14px;
+    opacity: 0.8;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.album-refeito {
+    position: absolute;
+    top: 170px;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+    height: 120px;
+    display: block;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.album-refeito:hover {
+    transform: scale(1.1) rotate(5deg);
+    filter: brightness(1.1);
+}
+
+.album-refeito model-viewer {
+    width: 100%;
+    height: 100%;
+}
+
+.historia {
+    margin-top: 40px;
+}
+
+.historia h2 {
+    font-family: 'Bungee', cursive;
+    margin-bottom: 10px;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+.historia p {
+    line-height: 1.6;
+    opacity: 0.9;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+}
+
+
+.tracklists-antigas {
+    margin-top: 40px;
+}
+
+.tracklists-antigas h2 {
+    font-family: 'Bungee', cursive;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+}
